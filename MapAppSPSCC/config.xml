@@ -13,6 +13,7 @@
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="10.0" />
   <!-- Support for Cordova 5.0.0 plugin system -->
+  <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
   <allow-intent href="tel:*" />
@@ -102,10 +103,20 @@
     <splash src="res/screens/windows/SplashScreen.scale-240.png" width="1152" height="1920" />
     <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920" />
   </platform>
+  <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
+  <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
+  <plugin name="cordova-plugin-statusbar" spec="~2.4.2" />
+  <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
   <preference name="KeepRunning" value="True" />
   <preference name="android-minSdkVersion" value="15" />
   <preference name="android-targetSdkVersion" value="24" />
   <preference name="ShowTitle" value="False" />
+  <plugin name="cordova-plugin-vibration" spec="~3.1.0" />
+  <plugin name="cordova-plugin-camera" spec="~2.4.1" />
+  <plugin name="cordova-plugin-file" spec="~6.0.1" />
+  <plugin name="cordova-plugin-media" spec="~2.4.1" />
+  <plugin name="cordova-plugin-device-motion" spec="~2.0.1" />
+  <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
   <preference name="Fullscreen" value="True" />
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>need camera access to take pictures</string>
