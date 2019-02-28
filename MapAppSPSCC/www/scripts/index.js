@@ -207,20 +207,6 @@ function initMap() {
 
 }
 google.maps.event.addDomListener(window, 'load', initMap);
-
-
-// ShowArrays()
-// Handles user clicks on map
-function showArrays(event) {
-    point = event.latLng;
-
-    for (i = 0; i < bounderies.length; i++) {
-            if (google.maps.geometry.poly.containsLocation(point, bermuda[i]) === true) 
-                    $(buildings[i].id).modal('show');        _
-    }
-}
-
-/* Original showArrays() from Souleymane - pops up latitutde and longitude if user clicks on map
 function showArrays(event) {
     // Since this polygon has only one path, we can call getPath() to return the
     // MVCArray of LatLngs.
@@ -239,8 +225,7 @@ function showArrays(event) {
     infoWindow.setContent(contentString);
     infoWindow.setPosition(event.latLng);
     infoWindow.open(map);
-} */
-
+}
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     var selectedMode = document.getElementById('mode').value;
     directionsService.route({
@@ -342,6 +327,7 @@ function displayLocation(position) {
 
 
     for (i = 0; i < bounderies.length; i++) {
+        
         for (j = 0; j < buildings.length; j++) {
             if (google.maps.geometry.poly.containsLocation(point, bermuda[i]) === true) {
                 //building_35_success.deleteMarker();
@@ -355,8 +341,73 @@ function displayLocation(position) {
                     $(buildings[i].id).modal('show');
                     pVisited.innerHTML += '<li data-role=' + 'list-divider' + '><a><h2>' + buildings[i].name + '</h2></a></li>';
                     mVisited.innerHTML += '<li data-role=' + 'list-divider' + '><a><h2>' + buildings[i].name + '</h2></a></li>';
+                    
+
+               /*     function alertDismissed() {
+                        // do something
+                    }
+
+                    navigator.notification.alert(
+                        'You are the winner!',  // message
+                        alertDismissed,         // callback
+                        'Game Over',            // title
+                        'Ok'                  // buttonName
+                    );
+/*                    function openCamera(selection) {
+
+                        var srcType = Camera.PictureSourceType.CAMERA;
+                        var options = setOptions(srcType);
+                        var func = createNewFileEntry;
+
+                        navigator.camera.getPicture(function cameraSuccess(imageUri) {
+
+                            displayImage(imageUri);
+                            // You may choose to copy the picture, save it somewhere, or upload.
+                            func(imageUri);
+
+                        }, function cameraError(error) {
+                            console.debug("Unable to obtain picture: " + error, "app");
+
+                        }, options);
+                    }
+
+
+/*
+                    navigator.camera.getPicture(onSuccess, onFail,
+                        {
+                            destinationType: Camera.DestinationType.FILE_URI,
+                            sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                            popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
+                        });
+
+                    // Reposition the popover if the orientation changes.
+                    window.onorientationchange = function () {
+                        var cameraPopoverHandle = new CameraPopoverHandle();
+                        var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY);
+                        cameraPopoverHandle.setPosition(cameraPopoverOptions);
+                    };
+
+
+                    function onSuccess(imageURI) {
+                        var image = document.getElementById('myImage');
+                        image.src = imageURI;
+                    }
+
+                    function onFail(message) {
+                        alert('Failed because: ' + message);
+                    }
+                    function cameraCallback(imageData) {
+                        var image = document.getElementById('myImage');
+                        image.src = "data:image/jpeg;base64," + imageData;
+                    }
+*/
+
+                    //building_35_success.addMarker();
+                    //let visited_35 = new visitedBuilding('Building 35', point);
+                    //buildings_visited.push(visited_35.name);
+                    //navigator.vibrate(1000);
                 } else if (buildings[i].visited === true) {
-                    // Already visited building, don't show pop-up again
+                    ////
                 }
                 
 
@@ -398,10 +449,6 @@ function setCss(elm, prop, val) {
     node.setProperty(prop, val);
     //setCss('map', 'visibility', 'visible');
 }
-
-
-/* Additional commented-out code left in for future development */
-
 /**
 /function visitedFunction() {
     var pVisited = document.querySelector('#visited');

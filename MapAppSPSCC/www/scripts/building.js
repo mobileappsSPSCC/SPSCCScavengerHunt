@@ -36,7 +36,7 @@ function building(id, name, location, image) {
     }
 }
 
-////////////////////////Instantiate buildings
+////////////////////////Instanciate buildings
 let building_35 = new building('#35', 'Building 35', { lat: 47.022119, lng: -122.935187 }, 'images/mapIcones/35.png');
 let building_34 = new building('#34', 'Building 34', { lat: 47.022089, lng: -122.932941 }, 'images/mapIcones/34.png');
 let building_33 = new building('#33', 'Building 33', { lat: 47.022062, lng: -122.933495 }, 'images/mapIcones/33.png');
