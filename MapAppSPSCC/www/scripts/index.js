@@ -327,7 +327,10 @@ function displayLocation(position) {
 
 
     for (i = 0; i < bounderies.length; i++) {
-        
+
+
+        // MCH: j is not used inside the loop. Remove the spurious for loop
+        // for the next build
         for (j = 0; j < buildings.length; j++) {
             if (google.maps.geometry.poly.containsLocation(point, bermuda[i]) === true) {
                 //building_35_success.deleteMarker();

@@ -51,10 +51,12 @@ let building_22 = new building('#22', 'Building 22', { lat: 47.022954, lng: -122
 let building_21 = new building('#21', 'Building 21', { lat: 47.024103, lng: -122.929911 }, 'images/mapIcones/21.png');
 let building_20 = new building('#20', 'Building 20', { lat: 47.024257, lng: -122.928623 }, 'images/mapIcones/20.png');
 let building_16 = new building('#16', 'Building 16', { lat: 47.024180, lng: -122.925993 }, 'images/mapIcones/16.png');
+
+/* Remove Facilities Buildings - MCH 20190312
 let building_15 = new building('#15', 'Building 15', { lat: 47.024391, lng: -122.926258 }, 'images/mapIcones/15.png');
 let building_14 = new building('#14', 'Building 14', { lat: 47.024598, lng: -122.926859 }, 'images/mapIcones/14.png');
 let building_13 = new building('#13', 'Building 34', { lat: 47.024291, lng: -122.926769 }, 'images/mapIcones/13.png');
-
+*/
 
 ///////////////////////////////////////////////////// Success
 function success(name, position) {
@@ -76,11 +78,14 @@ let buildings = [
     building_22,
     building_21,
     building_20,
-    building_16,
+    building_16
+];
+
+/* Remove facilities buildings - MCH 20190321
     building_15,
     building_14,
     building_13
-];
+]; */
 
 let set_1 = [
 

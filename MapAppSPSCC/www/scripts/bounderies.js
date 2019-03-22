@@ -159,7 +159,11 @@ let bounderies = [
     t21,
     t20,
     t16,
+];
+
+/* Remove facilities buildings - MCH 20190321
+
     t15,
     t14,
     t13
-];
+]; */

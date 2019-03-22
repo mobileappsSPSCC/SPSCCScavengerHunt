@@ -1,10 +1,10 @@
 {
   "android": {
     "release": {
-      "keystore": "c:\\spsccStor",
-      "storePassword": "spscc2018",
-      "alias": "spscc",
-      "password": "spscc2018",
+      "keystore": "res/native/android/Android.keystore",
+      "storePassword": "spscc2019",
+      "alias": "key0",
+      "password": "spscc2019",
       "keystoreType": ""
     }
   }
