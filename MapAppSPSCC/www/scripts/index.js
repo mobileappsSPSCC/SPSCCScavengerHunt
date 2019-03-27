@@ -327,11 +327,6 @@ function displayLocation(position) {
 
 
     for (i = 0; i < bounderies.length; i++) {
-
-
-        // MCH: j is not used inside the loop. Remove the spurious for loop
-        // for the next build
-        for (j = 0; j < buildings.length; j++) {
             if (google.maps.geometry.poly.containsLocation(point, bermuda[i]) === true) {
                 //building_35_success.deleteMarker();
                 if (buildings[i].visited === false) {
@@ -344,78 +339,8 @@ function displayLocation(position) {
                     $(buildings[i].id).modal('show');
                     pVisited.innerHTML += '<li data-role=' + 'list-divider' + '><a><h2>' + buildings[i].name + '</h2></a></li>';
                     mVisited.innerHTML += '<li data-role=' + 'list-divider' + '><a><h2>' + buildings[i].name + '</h2></a></li>';
-                    
-
-               /*     function alertDismissed() {
-                        // do something
-                    }
-
-                    navigator.notification.alert(
-                        'You are the winner!',  // message
-                        alertDismissed,         // callback
-                        'Game Over',            // title
-                        'Ok'                  // buttonName
-                    );
-/*                    function openCamera(selection) {
-
-                        var srcType = Camera.PictureSourceType.CAMERA;
-                        var options = setOptions(srcType);
-                        var func = createNewFileEntry;
-
-                        navigator.camera.getPicture(function cameraSuccess(imageUri) {
-
-                            displayImage(imageUri);
-                            // You may choose to copy the picture, save it somewhere, or upload.
-                            func(imageUri);
-
-                        }, function cameraError(error) {
-                            console.debug("Unable to obtain picture: " + error, "app");
-
-                        }, options);
-                    }
-
-
-/*
-                    navigator.camera.getPicture(onSuccess, onFail,
-                        {
-                            destinationType: Camera.DestinationType.FILE_URI,
-                            sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                            popoverOptions: new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY)
-                        });
-
-                    // Reposition the popover if the orientation changes.
-                    window.onorientationchange = function () {
-                        var cameraPopoverHandle = new CameraPopoverHandle();
-                        var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY);
-                        cameraPopoverHandle.setPosition(cameraPopoverOptions);
-                    };
-
-
-                    function onSuccess(imageURI) {
-                        var image = document.getElementById('myImage');
-                        image.src = imageURI;
-                    }
-
-                    function onFail(message) {
-                        alert('Failed because: ' + message);
-                    }
-                    function cameraCallback(imageData) {
-                        var image = document.getElementById('myImage');
-                        image.src = "data:image/jpeg;base64," + imageData;
-                    }
-*/
-
-                    //building_35_success.addMarker();
-                    //let visited_35 = new visitedBuilding('Building 35', point);
-                    //buildings_visited.push(visited_35.name);
-                    //navigator.vibrate(1000);
-                } else if (buildings[i].visited === true) {
-                    ////
                 }
-                
-
             }
-        }
     }
  /**
   *    var pLocation = document.getElementById("location");
