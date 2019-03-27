@@ -20,8 +20,6 @@
 <body>
 
     <div class="app">
-
-        <!--            <h1>Apache Cord</h1>-->
         <div id="deviceready" class="blink">
             <div id="navBar">
                 <!--<button id="track" name="button" onClick="initMap()">Start</button>-->
@@ -39,12 +37,11 @@
                         <p>
                             You’ll need to go in at least 7 buildings to be eligible for the free prize at the end of the tour—or visit them all for extra bragging points!
                         </p>
-                        <p>Scroll down for privacy policy.</p>
-                        <p>Lorem ipsum dolor fill in for privacy policy.</p>
                         <p><a href="#two" data-transition="flip" class="ui-btn ui-shadow ui-corner-all ui-btn ui-icon-location ui-btn-icon-right">Get Started</a></p>
-                        <!--                            <p><a href="#selfie" class="ui-btn ui-shadow ui-corner-all ui-btn ui-icon-grid ui-btn-icon-right" data-rel="dialog" data-transition="flip">Summary</a></p>-->
+                        <p><a onclick="$('#privacy_policy').modal('show');" data-transition="flip" class="ui-btn ui-shadow ui-corner-all ui-btn ui-icon-location ui-btn-icon-right">Privacy Policy</a></p>
+                        
                     </div>
-                </div><!-- /content -->
+                </div><!-- /content  -->
             </div><!-- /page one -->
             <!-- Start of second page: #two -->
 
@@ -120,23 +117,32 @@
                     <p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page Welcome Page</a></p>
                 </div><!-- /content -->
             </div><!-- /page popup -->
-            <!--<div id="instructions">
-        <h3>Get Started:</h3>
-        <h4>Welcome to SPSCC!</h4>
-
-        <p>We hope you're excited to learn a little more about our campus and hope you have a fun time hunting for clues on this self-guided scavenger hunt!</p>
-
-        <p>You’ll need to go in at least 7 buildings to be eligible for the free prize at the end of the tour—or visit them all for extra bragging points!</p>
-        <p style="text-align: center"><button id="gotIt" onClick="setCss('instructions','display','none'), setCss('map', 'visibility', 'visible')">Got It</button></p>
-                            <div id="dialog" title="Basic dialog">
-        <p>Image:</p>
-        <img src" alt="Placeholder Image" />
-
-    </div>
-    </div>-->
-            <!---->
             <!-- Button trigger modal -->
-            <!-- Button trigger modal -->
+
+
+
+
+            <!-- Modal Privacy Policy-->
+            <div id="privacy_policy" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h5 class="modal-title" id="exampleModalLongTitle">Privacy Policy</h5>
+                            <button class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" data-dismiss="modal">No text</button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="card-img-top" src="images/spscc.jpg" alt="Card image cap" />
+                            <div class="card-body">
+                                <p>Text of privacy policy goes here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!-- Modal Building 22-->
             <div id="22" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -146,8 +152,8 @@
                             <h5 class="modal-title" id="exampleModalLongTitle">Building 22 – Start (and End) Here</h5>
                             <button class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" data-dismiss="modal">No text</button>
                             <!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>-->
+                                <span aria-hidden="true">&times;</span>
+                            </button>-->
                         </div>
                         <div class="modal-body">
                             <!--<div class="card" style="width: 18rem;">-->
@@ -199,8 +205,8 @@
                             <h5 class="modal-title" id="exampleModalLongTitle">Building 27 – What’s Cookin’?</h5>
                             <button class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" data-dismiss="modal">No text</button>
                             <!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>-->
+                        <span aria-hidden="true">&times;</span>
+                    </button>-->
                         </div>
                         <div class="modal-body">
                             <!--<div class="card" style="width: 18rem;">-->
@@ -250,8 +256,8 @@
                             <h5 class="modal-title" id="exampleModalLongTitle">Building 31 – Gym</h5>
                             <button class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" data-dismiss="modal">No text</button>
                             <!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>-->
+                        <span aria-hidden="true">&times;</span>
+                    </button>-->
                         </div>
                         <div class="modal-body">
                             <!--<div class="card" style="width: 18rem;">-->
@@ -636,9 +642,9 @@
                     <img class="card-img-top" src="images/spscc.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Privacy Policy (Draft)</h5>
-                        <p class="card-text"><p>Will be replaced with an approved version when available.</p> 
-                        
-                        
+                        <p class="card-text"><p>Will be replaced with an approved version when available.</p>
+
+
                         <!--                            <p><a href="#selfie" class="ui-btn ui-shadow ui-corner-all ui-btn ui-icon-grid ui-btn-icon-right" data-rel="dialog" data-transition="flip">Summary</a></p>-->
                     </div>
                 </div><!-- /content -->
@@ -665,17 +671,17 @@
                 </div><!-- /content -->
             </div><!-- /page popup -->
             <!--                <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>-->
+        <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+    </div>-->
             <!--                  <div>
-                          <strong>Mode of Travel: </strong>
-                          <select id="mode" onchange="calcRoute();">
-                              <option value="DRIVING">Driving</option>
-                              <option value="WALKING">Walking</option>
-                              <option value="BICYCLING">Bicycling</option>
-                              <option value="TRANSIT">Transit</option>x
-                          </select>
-                      </div>-->
+        <strong>Mode of Travel: </strong>
+        <select id="mode" onchange="calcRoute();">
+            <option value="DRIVING">Driving</option>
+            <option value="WALKING">Walking</option>
+            <option value="BICYCLING">Bicycling</option>
+            <option value="TRANSIT">Transit</option>x
+        </select>
+    </div>-->
             <div id="directions">
             </div>
             <div>
