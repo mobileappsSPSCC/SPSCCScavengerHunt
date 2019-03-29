@@ -2,6 +2,9 @@
 // http://go.microsoft.com/fwlink/?LinkID=397704
 // To debug code on page load in cordova-simulate or on Android devices/emulators: launch your app, set breakpoints, 
 // and then run "window.location.reload()" in the JavaScript Console.
+
+// POPUP_INFO - used to suppress in-building popups until the user clicks "start"
+var POPUP_INFO = false;
 var map, infoWindow;
 var markers = [];
 var trackId;
@@ -329,7 +332,9 @@ function displayLocation(position) {
     for (i = 0; i < bounderies.length; i++) {
             if (google.maps.geometry.poly.containsLocation(point, bermuda[i]) === true) {
                 //building_35_success.deleteMarker();
-                if (buildings[i].visited === false) {
+
+                // Pop up building info only if popup info is enabled (the user clicked start) AND this is the first visit to the building
+                if ((POPUP_INFO == true) && (buildings[i].visited === false)) {
                     buildings[i].deleteMarker();
                     let successMark = new success(buildings[i].name, buildings[i].location);
                     buildings[i].success();
