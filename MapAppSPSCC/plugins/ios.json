@@ -1,0 +1,37 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    },
+    "cordova-plugin-device-motion": {
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.spscc.mapApp"
+    }
+  }
+}
