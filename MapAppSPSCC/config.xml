@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="com.spscc.mapApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
   <name>SPSCC Scavenger Hunt</name>
   <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, and the Windows Universal Platform.</description>
@@ -119,19 +119,19 @@
     <splash src="res/screens/windows/SplashScreen.scale-240.png" width="1152" height="1920" />
     <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920" />
   </platform>
-  <plugin name="cordova-plugin-geolocation"  />
-  <plugin name="cordova-plugin-inappbrowser"  />
+  <plugin name="cordova-plugin-geolocation" />
+  <plugin name="cordova-plugin-inappbrowser" />
   <plugin name="cordova-plugin-statusbar" />
-  <plugin name="cordova-plugin-splashscreen"  />
+  <plugin name="cordova-plugin-splashscreen" />
   <preference name="KeepRunning" value="True" />
   <preference name="android-minSdkVersion" value="15" />
   <preference name="ShowTitle" value="False" />
-  <plugin name="cordova-plugin-vibration"  />
-  <plugin name="cordova-plugin-camera"  />
+  <plugin name="cordova-plugin-vibration" />
+  <plugin name="cordova-plugin-camera" />
   <!-- MCH: Updated plugin-file version -->
   <plugin name="cordova-plugin-file" />
-  <plugin name="cordova-plugin-media"  />
-  <plugin name="cordova-plugin-device-motion"  />
+  <plugin name="cordova-plugin-media" />
+  <plugin name="cordova-plugin-device-motion" />
   <plugin name="cordova-plugin-dialogs" />
   <preference name="Fullscreen" value="True" />
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
@@ -147,4 +147,8 @@
     <string>need photo library access to save pictures there</string>
   </edit-config>
   <preference name="android-targetSdkVersion" value="26" />
+  <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
+  <engine name="android" spec="5.2.1" />
+  <engine name="ios" spec="4.2.0" />
+  <engine name="windows" spec="4.4.2" />
 </widget>
