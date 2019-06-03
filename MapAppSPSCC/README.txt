@@ -8,3 +8,5 @@ Later contributions from MCH include things like:
   Adding/linking to additional building images supplied after the end of the internship
   Release engineering for Android and iOS
 
+  Several important pieces (like signing certificates and how-to maintenance documentation) are backed up on in OneDrive for mobileapps@spscc.edu.
+  Authorized maintainers should contact IT for information on how to access that account.
