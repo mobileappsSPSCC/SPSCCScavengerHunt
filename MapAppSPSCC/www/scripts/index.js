@@ -336,7 +336,7 @@ function displayLocation(position) {
                 // Pop up building info only if popup info is enabled (the user clicked start) AND this is the first visit to the building
                 if ((POPUP_INFO == true) && (buildings[i].visited === false)) {
                     buildings[i].deleteMarker();
-                    let successMark = new success(buildings[i].name, buildings[i].location);
+                    successMark = new success(buildings[i].name, buildings[i].location);
                     buildings[i].success();
                     buildings[i].visited = true;
                     visitedBuildings.push(buildings[i].name);
