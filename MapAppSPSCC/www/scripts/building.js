@@ -34,7 +34,7 @@ function building(id, name, location, image) {
         markers.push(marker);
         google.maps.event.addListener(marker, 'click', function () { $(id).modal('show'); });
     }
-}
+};
 
 ////////////////////////Instanciate buildings
 let building_35 = new building('#35', 'Building 35', { lat: 47.022119, lng: -122.935187 }, 'images/mapIcones/35.png');

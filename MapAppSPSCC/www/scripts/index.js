@@ -248,7 +248,7 @@ function showArrays(event) {
 }
  
 ////////////////////////////Take Foto
-let app = {
+app = {
     init: function () {
         document.getElementById('btnSelfie').addEventListener('click', app.takephoto);
     },

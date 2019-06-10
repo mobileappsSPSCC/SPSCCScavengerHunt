@@ -145,7 +145,7 @@ var t26 = [
     { lat: 47.022771, lng: -122.929250 }
 ]
 
-let bounderies = [
+bounderies = [
     t35,
     t34,
     t32,
