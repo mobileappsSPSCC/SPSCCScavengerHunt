@@ -253,7 +253,7 @@ app = {
         document.getElementById('btnSelfie').addEventListener('click', app.takephoto);
     },
     takephoto: function () {
-        let opts = {
+        opts = {
             quality: 80,
             destinationType: Camera.DestinationType.FILE_URI,
             sourceType: Camera.PictureSourceType.CAMERA,
