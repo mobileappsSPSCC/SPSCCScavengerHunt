@@ -84,7 +84,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }*/
 
 function initMap() {
-    navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationFailure, { timeout: 5000 });
+    navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationFailure, { enableHighAccuracy: false, timeout: 5000 });
 
 };
 
