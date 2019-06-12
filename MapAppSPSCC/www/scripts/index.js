@@ -84,131 +84,134 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }*/
 
 function initMap() {
-    navigator.geolocation.getCurrentPosition(function (position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: pos,
-            gestureHandling: 'greedy',
-            zoom: 18,
-            styles: [
-                {
-                    "featureType": "landscape.natural",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "color": "#7bbfa4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.natural.landcover",
-                    "stylers": [
-                        {
-                            "color": "#7bbfa4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.natural.landcover",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#7bbfa4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.natural.terrain",
-                    "stylers": [
-                        {
-                            "color": "#7bbfa4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.natural.terrain",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "color": "#7bbfa4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.natural.terrain",
-                    "elementType": "labels.text",
-                    "stylers": [
-                        {
-                            "color": "#7195ca"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi.school",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "color": "#55e693"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "color": "#87a3b4"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "water",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "color": "#599de1"
-                        }
-                    ]
-                }
-            ]
-        });
-        for (var i = 0; i < buildings.length; i++) {
-            buildings[i].addMarker();
-        }
+    navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationFailure);
 
+};
 
-        for (i = 0; i < bounderies.length; i++) {
-            // Construct the polygon.
-            for (var j = 0; j < bounderies.length; j++) {
-                j = new google.maps.Polygon({
-                    paths: bounderies[i],
-                    strokeColor: '#FF0000',
-                    strokeOpacity: 0.8,
-                    strokeWeight: 3,
-                    fillColor: '#FF0000',
-                    fillOpacity: 0.35
-                });
-                j.setMap(map);
-                // Add a listener for the click event.
-                j.addListener('click', showArrays);
+function onGeolocationSuccess(position)
+{
+    var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+    };
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        gestureHandling: 'greedy',
+        zoom: 18,
+        styles: [
+            {
+                "featureType": "landscape.natural",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#7bbfa4"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.landcover",
+                "stylers": [
+                    {
+                        "color": "#7bbfa4"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.landcover",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#7bbfa4"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.terrain",
+                "stylers": [
+                    {
+                        "color": "#7bbfa4"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.terrain",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#7bbfa4"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.terrain",
+                "elementType": "labels.text",
+                "stylers": [
+                    {
+                        "color": "#7195ca"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.school",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#55e693"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#87a3b4"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#599de1"
+                    }
+                ]
             }
-        };
-
-      
-        infoWindow = new google.maps.InfoWindow;
-
-
-/*        var bl = document.querySelector('#bl');
-        for (i = 0; i < visitedBuildings.length; i++) {
-            bl.innerHTML += '<ul>' + '<li>' + visitedLocations[i] + '</li>' + '</ul>';
-        }*/
-
+        ]
     });
+    for (var i = 0; i < buildings.length; i++) {
+        buildings[i].addMarker();
+    }
 
-}
+
+    for (i = 0; i < bounderies.length; i++) {
+        // Construct the polygon.
+        for (var j = 0; j < bounderies.length; j++) {
+            j = new google.maps.Polygon({
+                paths: bounderies[i],
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 3,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35
+            });
+            j.setMap(map);
+            // Add a listener for the click event.
+            j.addListener('click', showArrays);
+        }
+    };
+
+
+    infoWindow = new google.maps.InfoWindow;
+};
+
+
+function onGeolocationFailure(error) {
+    alert("Geolocation failure:" + error.code + " " + error.message);
+};
+
+
 google.maps.event.addDomListener(window, 'load', initMap);
 function showArrays(event) {
     // Since this polygon has only one path, we can call getPath() to return the
@@ -245,7 +248,7 @@ function showArrays(event) {
             window.alert('Directions request failed due to ' + status);
         }
     });
-}
+};
  
 ////////////////////////////Take Foto
 app = {
