@@ -136,6 +136,7 @@
   <plugin name="cordova-plugin-media" />
   <plugin name="cordova-plugin-device-motion" />
   <plugin name="cordova-plugin-dialogs" />
+  <plugin name="cordova-plugin-geolocation" spec="4.0.0" />
   <preference name="Fullscreen" value="True" />
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>need camera access to take pictures</string>
@@ -157,5 +158,5 @@
   <engine name="android"  />
   <engine name="ios" />
   <engine name="windows"  />
-  <plugin name="cordova-plugin-geolocation" />
+
 </widget>
