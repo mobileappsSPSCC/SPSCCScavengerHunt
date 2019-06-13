@@ -209,6 +209,10 @@ function onGeolocationSuccess(position)
 
 function onGeolocationFailure(error) {
     alert("Geolocation failure:" + error.code + " " + error.message);
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: { lat: 37.77, lng: -122.447 }
+    });
 };
 
 
