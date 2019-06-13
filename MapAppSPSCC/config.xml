@@ -97,6 +97,7 @@
     <icon src="res/icons/windows/Wide310x150Logo.scale-240.png" width="744" height="360" />
   </platform>
   <platform name="android">
+    <plugin name="cordova-plugin-geolocation"  /
     <splash src="res/screens/android/screen-hdpi-landscape.png" density="land-hdpi" />
     <splash src="res/screens/android/screen-ldpi-landscape.png" density="land-ldpi" />
     <splash src="res/screens/android/screen-mdpi-landscape.png" density="land-mdpi" />
@@ -107,6 +108,8 @@
     <splash src="res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi" />
   </platform>
   <platform name="ios">
+    <!-- iOS needs a previous version of the geolocation plugin as of 20190613 - the latest version never returns geolocation data -->
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
     <splash src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480" />
     <splash src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" height="960" />
     <splash src="res/screens/ios/screen-ipad-portrait.png" width="768" height="1024" />
@@ -143,12 +146,11 @@
   <!-- The curren version works on Android, but not on iOS. -->
   
   <!-- For Android -->
-  <plugin name="cordova-plugin-geolocation"  />
-  
+  <!--> -->
+   
   <!-- For iOS -->
-  <!--
-  <plugin name="cordova-plugin-geolocation" spec="~2.4.3" /> -->
   
+ 
   
   <preference name="Fullscreen" value="True" />
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
