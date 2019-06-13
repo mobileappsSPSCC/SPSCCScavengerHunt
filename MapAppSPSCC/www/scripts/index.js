@@ -83,17 +83,31 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }*/
 
+// This was in the original file - initMap was being called twice! That's not right. . . .
+// This could potentially have fired initMap before the Cordova packages/libraries were fully active.
+
+
+
 function initMap() {
     navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationFailure, { enableHighAccuracy: true, timeout: 15000 });
 
 };
 
-function onGeolocationSuccess(position)
-{
+function onGeolocationSuccess(position) {
     var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
     };
+    initMapAtLocation(pos);
+};
+
+function onGeolocationFailure(error) {
+    alert("Geolocation failure:" + error.code + " " + error.message);
+    var pos = { lat: 47.0235, lng: -122.929 };
+    initMapAtLocation(pos);
+};
+
+function initMapAtLocation(pos) {
     map = new google.maps.Map(document.getElementById('map'), {
         center: pos,
         gestureHandling: 'greedy',
@@ -184,7 +198,6 @@ function onGeolocationSuccess(position)
         buildings[i].addMarker();
     }
 
-
     for (i = 0; i < bounderies.length; i++) {
         // Construct the polygon.
         for (var j = 0; j < bounderies.length; j++) {
@@ -202,21 +215,9 @@ function onGeolocationSuccess(position)
         }
     };
 
-
     infoWindow = new google.maps.InfoWindow;
 };
 
-
-function onGeolocationFailure(error) {
-    alert("Geolocation failure:" + error.code + " " + error.message);
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: { lat: 47.0235, lng: -122.929 }
-    });
-};
-
-
-google.maps.event.addDomListener(window, 'load', initMap);
 function showArrays(event) {
     // Since this polygon has only one path, we can call getPath() to return the
     // MVCArray of LatLngs.
