@@ -94,5 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="res\icons\android\" />
+    <Folder Include="res\icons\ios\" />
   </ItemGroup>
 </Project>
