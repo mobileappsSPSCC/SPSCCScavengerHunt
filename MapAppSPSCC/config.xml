@@ -127,8 +127,25 @@
   <engine name="ios" />
   <engine name="windows"  />
 
-
   <platform name="ios">
+    <config-file target="*-Info.plist" >
+      <array>
+        <dict>
+          <key>NSCameraUsageDescription</key>
+          <string>Need access to the camera for the user to take (optional) selfies in each building</string>
+          <key>NSCameraUsageDescription</key>
+          <string>Need photo library access to store (optional) selfies</string>
+          <key>NSCameraUsageDescription</key>
+          <string>Need access to location services to update the map display</string>
+          <key>NSCameraUsageDescription</key>
+          <string>Need access to location services to update the map display</string>
+        </dict>
+      </array>
+    </config-file>
+  </platform>
+  
+
+  <!--<platform name="ios">
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" parent="\" mode="overwrite">
       <string>Need access to the camera for the user to take (optional) selfies in each building</string>
     </edit-config>
@@ -141,5 +158,5 @@
     <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist"  parent="\" mode="overwrite">
       <string>Need access to location services to update the map display</string>
     </edit-config>
-  </platform>
+  </platform>-->
 </widget>
