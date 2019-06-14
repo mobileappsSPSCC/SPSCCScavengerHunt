@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="com.spscc.mapApp" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="com.spscc.mapApp" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
   <name>SPSCC Scavenger Hunt</name>
   <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, and the Windows Universal Platform.</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Souleymane</author>
@@ -120,21 +120,22 @@
   <plugin name="cordova-plugin-dialogs" />
   <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
   <preference name="Fullscreen" value="True" />
-  <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need camera access to take pictures</string>
-  </edit-config>
-  <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need photo library access to get pictures from there</string>
-  </edit-config>
-  <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access to find things nearby</string>
-  </edit-config>
-  <edit-config target="NSAlwaysUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access to find things nearby</string>
-  </edit-config>
-  <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need photo library access to save pictures there</string>
-  </edit-config>
+
+  <platform name="ios">
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need access to the camera for the user to take (optional) selfies in each building</string>
+    </edit-config>
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need photo library access to store (optional) selfies</string>
+    </edit-config>
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need access to location services to update the map display</string>
+    </edit-config>
+    <edit-config target="NSAlwaysUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need access to location services to update the map display</string>
+    </edit-config>
+  </platform>
+  
   <preference name="android-targetSdkVersion" value="26" />
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
   <engine name="android"  />
