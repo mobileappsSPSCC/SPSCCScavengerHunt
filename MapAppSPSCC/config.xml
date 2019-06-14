@@ -26,6 +26,18 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="geo:*" />
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need access to the camera for the user to take (optional) selfies in each building</string>
+    </edit-config>
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need photo library access to store (optional) selfies</string>
+    </edit-config>
+    <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need access to location services to update the map display</string>
+    </edit-config>
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="overwrite">
+      <string>Need access to location services to update the map display</string>
+    </edit-config>
   </platform>
 
   <platform name="android">
@@ -120,26 +132,9 @@
   <plugin name="cordova-plugin-dialogs" />
   <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
   <preference name="Fullscreen" value="True" />
-
-  <platform name="ios">
-    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="overwrite">
-      <string>Need access to the camera for the user to take (optional) selfies in each building</string>
-    </edit-config>
-    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="overwrite">
-      <string>Need photo library access to store (optional) selfies</string>
-    </edit-config>
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="overwrite">
-      <string>Need access to location services to update the map display</string>
-    </edit-config>
-    <edit-config target="NSAlwaysUsageDescription" file="*-Info.plist" mode="overwrite">
-      <string>Need access to location services to update the map display</string>
-    </edit-config>
-  </platform>
-  
   <preference name="android-targetSdkVersion" value="26" />
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
   <engine name="android"  />
   <engine name="ios" />
   <engine name="windows"  />
-
 </widget>
