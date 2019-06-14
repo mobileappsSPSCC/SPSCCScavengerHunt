@@ -102,7 +102,7 @@ function onGeolocationSuccess(position) {
 };
 
 function onGeolocationFailure(error) {
-    alert("Geolocation failure:" + error.code + " " + error.message);
+    alert("Geolocation failure:" + error.code + " " + error.message  + ". Please connect to WiFi or Cell data, close and reopen the app.");
     var pos = { lat: 47.0235, lng: -122.929 };
     initMapAtLocation(pos);
 };
