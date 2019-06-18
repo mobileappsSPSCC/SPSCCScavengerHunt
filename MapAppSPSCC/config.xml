@@ -38,6 +38,20 @@
     <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist"  parent="\" mode="merge">
       <string>Need access to location services to update the map display</string>
     </edit-config>
+    
+    <config-file platform="ios" parent="NSCameraUsageDescription" mode="replace">
+      <string>Need access to the camera for the user to take (optional) selfies in each building</string>
+    </config-file>
+      <config-file platform="ios" parent="NSPhotoLibraryUsageDescription" mode="replace">
+      <string>Need photo library access to store (optional) selfies</string>
+    </config-file>
+    <config-file platform="ios" parent="NSLocationAlwaysUsageDescription" mode="replace">
+      <string>Need access to location services to update the map display</string>
+    </config-file>
+    <config-file platform="ios" parent="NSLocationWhenInUseUsageDescription" mode="replace">
+      <string>Need access to location services to update the map display</string>
+    </config-file>
+
   </platform>
 
   <platform name="android">
