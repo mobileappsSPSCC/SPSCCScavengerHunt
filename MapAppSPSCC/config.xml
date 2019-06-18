@@ -26,6 +26,8 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="geo:*" />
+    
+    <!-- Should work according to the docs, but doesn't. -->
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" parent="\" mode="merge">
       <string>Need access to the camera for the user to take (optional) selfies in each building</string>
     </edit-config>
@@ -39,6 +41,8 @@
       <string>Need access to location services to update the map display</string>
     </edit-config>
     
+    
+    <!-- Should be deprecated, but works as of 20190618 -->
     <config-file platform="ios" parent="NSCameraUsageDescription" mode="replace">
       <string>Need access to the camera for the user to take (optional) selfies in each building</string>
     </config-file>
