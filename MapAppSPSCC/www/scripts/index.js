@@ -283,7 +283,8 @@ app = {
             targetWidth: 360,
             targetHeight: 640,
 /*            allowEdit: true,*/
-            correctOrientation: true 
+            correctOrientation: true, 
+            saveToPhotoAlbum: true
         };
 
         navigator.camera.getPicture(app.ftw, app.wtf, opts);
