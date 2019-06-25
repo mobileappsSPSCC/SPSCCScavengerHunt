@@ -14,6 +14,8 @@ var im = 'images/mapIcones/bluecircle.png';
 var keepMarker = [];
 var bermuda = [];
 var point;
+var mapInitialized = false, displayedGeolocationError = false;
+
 (function () {
     "use strict";
 
@@ -89,7 +91,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 
 function initMap() {
-    navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationFailure, { enableHighAccuracy: true, timeout: 15000 });
+    navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationFailure, { enableHighAccuracy: true, timeout: 3000 });
 
 };
 
@@ -102,9 +104,18 @@ function onGeolocationSuccess(position) {
 };
 
 function onGeolocationFailure(error) {
-    alert("Geolocation failure:" + error.code + " " + error.message  + ". Please connect to WiFi or Cell data and relaunch the app.");
-    var pos = { lat: 47.0235, lng: -122.929 };
-    initMapAtLocation(pos);
+    if (mapInitialized == false) {
+        mapInitialized = true;
+        // alert("Geolocation failure:" + error.code + " " + error.message + ". Please connect to WiFi or Cell data.");
+        var pos = { lat: 47.0235, lng: -122.929 };
+        initMapAtLocation(pos);
+    }
+    else if (displayedGeolocationError == false) {
+        displayedGeolocationError = true;
+        // alert("Geolocation error: the map will stop updating for a bit. Keep going! The map will update when you have cell and/or Wifi service again.");
+    } else {
+        // Do nothing
+    };
 };
 
 function initMapAtLocation(pos) {
